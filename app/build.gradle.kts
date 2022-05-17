@@ -77,6 +77,13 @@ dependencies {
     implementation(Dependencies.Room.paging)
     kapt(Dependencies.Room.compiler)
 
+    // Retrofit
+    implementation(Dependencies.Retrofit.retrofit)
+    implementation(Dependencies.Retrofit.retrofitConverter)
+
+//OkHttp
+    implementation(Dependencies.OkKHttp.okhttp)
+    implementation(Dependencies.OkKHttp.okhttpLoginInterceptor)
     testImplementation(Dependencies.Test.jUnit)
     androidTestImplementation(Dependencies.Test.jUnitExt)
     androidTestImplementation(Dependencies.Test.espresso)

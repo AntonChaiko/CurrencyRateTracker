@@ -47,4 +47,14 @@ object Dependencies {
     object Kotlin {
         const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2"
     }
+    object Retrofit{
+        private const val retrofit_version = "2.9.0"
+        const val retrofit = "com.squareup.retrofit2:retrofit:$retrofit_version"
+        const val retrofitConverter = "com.google.code.gson:gson:$retrofit_version"
+    }
+    object OkKHttp{
+        private const val okhttp_version = "4.9.1"
+        const val okhttp = "com.squareup.okhttp3:okhttp:$okhttp_version"
+        const val okhttpLoginInterceptor = "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    }
 }
