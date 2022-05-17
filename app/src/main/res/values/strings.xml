@@ -2,6 +2,7 @@
     <string name="app_name">CurrencyRateTracker</string>
     <string name="popular">Popular</string>
     <string name="favorites">Favorites</string>
+    <string name="type_currency">Type currency</string>
 
     <string-array name="currencies">
         <item>United Arab Emirates Dirham</item>
