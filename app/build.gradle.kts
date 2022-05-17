@@ -3,7 +3,6 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     kotlin("plugin.serialization") version "1.5.30"
-    id("com.google.gms.google-services")
     id("dagger.hilt.android.plugin")
 }
 
@@ -67,6 +66,9 @@ dependencies {
     //Hilt
     implementation(Dependencies.Hilt.android)
     implementation(Dependencies.Hilt.navigation)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
     kapt(Dependencies.Hilt.compiler)
 
     // Room

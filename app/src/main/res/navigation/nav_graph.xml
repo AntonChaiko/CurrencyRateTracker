@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/popularFragment">
 
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.currencyratetracker.ui.fragments.favoritesfragment.FavoritesFragment"
+        android:label="FavoritesFragment"
+        tools:layout="@layout/favorites_fragment"/>
+    <fragment
+        android:id="@+id/popularFragment"
+        android:name="com.example.currencyratetracker.ui.fragments.popularfragment.PopularFragment"
+        android:label="PopularFragment"
+        tools:layout="@layout/popular_fragment"/>
 </navigation>

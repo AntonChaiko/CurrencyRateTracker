@@ -1,32 +1,27 @@
 package com.example.currencyratetracker.ui.fragments.favoritesfragment
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.currencyratetracker.R
+import com.example.currencyratetracker.databinding.FavoritesFragmentBinding
+import com.example.currencyratetracker.ui.fragments.basefragment.BaseFragment
 
-class FavoritesFragment : Fragment() {
+class FavoritesFragment : BaseFragment<FavoritesFragmentBinding>() {
 
-    companion object {
-        fun newInstance() = FavoritesFragment()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
-    private lateinit var viewModel: FavoritesViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.favorites_fragment, container, false)
-    }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FavoritesViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+
+
+    override fun initBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FavoritesFragmentBinding = FavoritesFragmentBinding.inflate(inflater, container, false)
+
 
 }

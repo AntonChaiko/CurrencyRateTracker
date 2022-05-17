@@ -1,32 +1,20 @@
 package com.example.currencyratetracker.ui.fragments.popularfragment
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.currencyratetracker.R
+import com.example.currencyratetracker.databinding.PopularFragmentBinding
+import com.example.currencyratetracker.ui.fragments.basefragment.BaseFragment
 
-class PopularFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = PopularFragment()
+class PopularFragment : BaseFragment<PopularFragmentBinding>() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
+    override fun initBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): PopularFragmentBinding = PopularFragmentBinding.inflate(inflater,container,false)
 
-    private lateinit var viewModel: PopularViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.popular_fragment, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PopularViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
 }

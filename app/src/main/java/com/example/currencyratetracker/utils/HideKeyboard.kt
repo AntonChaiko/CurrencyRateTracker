@@ -1,4 +1,4 @@
-package com.example.onlinestoreapp.utils
+package com.example.currencyratetracker.utils
 
 import android.app.Activity
 import android.content.Context
