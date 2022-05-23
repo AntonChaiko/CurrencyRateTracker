@@ -1,7 +1,12 @@
 package com.example.currencyratetracker.domain.repository
 
-import com.example.currencyratetracker.domain.models.CurrencyResponse
+import com.example.currencyratetracker.domain.models.Currency
+import com.example.currencyratetracker.utils.Resource
+import kotlinx.coroutines.flow.Flow
 
 interface CurrencyRepository {
-    suspend fun getLatestCurrency(currency:String) : CurrencyResponse
+    fun getLatestCurrency(currency:String) : Flow<Resource<List<Currency>>>
+    suspend fun insertCurrency(currency:Currency)
+    suspend fun getListOfCurrencies() : List<Currency>
+    suspend fun deleteCurrency(currency: String)
 }

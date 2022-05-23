@@ -80,6 +80,7 @@ dependencies {
     // Retrofit
     implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.retrofitConverter)
+    implementation(Dependencies.Retrofit.gson)
 
 //OkHttp
     implementation(Dependencies.OkKHttp.okhttp)
