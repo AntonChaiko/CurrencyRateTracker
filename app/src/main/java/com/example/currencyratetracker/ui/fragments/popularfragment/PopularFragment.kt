@@ -35,7 +35,7 @@ class PopularFragment : BaseFragment<PopularFragmentBinding>() {
 
 
 
-        binding.currenciesTextView.apply {
+        binding.currenciesTextView.run {
             this.setAdapter(arrayAdapter)
             this.setOnFocusChangeListener { _, _ ->
                 binding.currenciesTextView.showDropDown()
@@ -56,12 +56,19 @@ class PopularFragment : BaseFragment<PopularFragmentBinding>() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.getLatestCurrency("USD")
+        binding.currenciesTextView.setText("USD")
+    }
+
+
     private fun updateUi(viewState: PopularState) {
         val (currencies, isLoading) = viewState
         binding.loadingProgressBar.isVisible = isLoading
         val adapter = PopularFragmentAdapter(
             addCurrencyToFavorite = { viewModel.addToFavorites(it) },
-            deleteFromFavorites = {viewModel.deleteFromFavorites(it)}
+            deleteFromFavorites = { viewModel.deleteFromFavorites(it) }
         )
         adapter.submitList(currencies)
         binding.currenciesRecyclerView.adapter = adapter

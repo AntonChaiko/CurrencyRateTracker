@@ -1,5 +1,6 @@
 package com.example.currencyratetracker.ui.fragments.popularfragment
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.currencyratetracker.domain.models.Currency
@@ -9,10 +10,7 @@ import com.example.currencyratetracker.domain.use_cases.GetCurrencyUseCase
 import com.example.currencyratetracker.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -53,14 +51,13 @@ class PopularViewModel @Inject constructor(
                     )
                 }
             }
-        }.launchIn(viewModelScope)
+        }.catch { ex-> Log.d("asd", "getLatestCurrency: ${ex.localizedMessage} ") }.launchIn(viewModelScope)
     }
 
     fun addToFavorites(currency: Currency) {
         viewModelScope.launch {
             addToFavorites.invoke(currency)
         }
-
     }
     fun deleteFromFavorites(currency: String){
         viewModelScope.launch {

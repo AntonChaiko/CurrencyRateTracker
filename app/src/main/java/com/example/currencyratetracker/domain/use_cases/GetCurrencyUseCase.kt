@@ -12,6 +12,4 @@ class GetCurrencyUseCase @Inject constructor(
     operator fun invoke(currency: String): Flow<Resource<List<Currency>>> {
         return repository.getLatestCurrency(currency)
     }
-
-
 }

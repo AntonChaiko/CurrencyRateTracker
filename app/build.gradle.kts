@@ -82,11 +82,17 @@ dependencies {
     implementation(Dependencies.Retrofit.retrofitConverter)
     implementation(Dependencies.Retrofit.gson)
 
-//OkHttp
+    //OkHttp
     implementation(Dependencies.OkKHttp.okhttp)
     implementation(Dependencies.OkKHttp.okhttpLoginInterceptor)
+
+    //tests
     testImplementation(Dependencies.Test.jUnit)
     androidTestImplementation(Dependencies.Test.jUnitExt)
     androidTestImplementation(Dependencies.Test.espresso)
+    androidTestImplementation("com.google.truth:truth:1.1.3")
+    testImplementation("com.google.truth:truth:1.1.3")
+
+    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
 
 }
